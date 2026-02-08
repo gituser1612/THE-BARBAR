@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F9F7F1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b7860b;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8e6809;
+  }
+
+  body {
+    @apply bg-cream-bg text-charcoal-text font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white;
+  }
+}
+
+@layer utilities {
+  .moody-img {
+    filter: sepia(20%) contrast(105%);
+    transition: filter 0.5s ease;
+  }
+
+  .moody-img:hover {
+    filter: sepia(0%) contrast(100%);
+  }
+}

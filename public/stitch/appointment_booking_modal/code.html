@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE BARBAR - Appointment Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2e2e2e",
+                        "background-light": "#F9F7F2", /* Warm cream background as requested */
+                        "background-dark": "#191919",
+                        "neutral-light": "#f0ede6",
+                        "neutral-dark": "#262626",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d4; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a3a3a3; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-primary dark:text-white font-display min-h-screen flex flex-col relative overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0 bg-cover bg-center pointer-events-none" data-alt="Blurred background image of a barbershop interior with warm lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBggHzgZCaRGMe6yvJBNCNoZhUHHbBkWCG2gLWtcCdPztuTHLcBjKMH4ROBVLw-_qzlaB56IthT3Nw-HoSSRomvcq1ELcE6BLt4NhF8xQ31MLlbuukhq_qMXLIHtROVHdP1_v7SaT28s1pqC-pfSHpy2r6ALnBpoB_YKGmtFhEKxatKYjkZ5T54IETQ_GdWGtYl7n-s6qU4SUeAaQguoCcAthST4jryxcS-VC6uNL0ttdSbnxpMeHWv4xiD3qD9Crecp6AH4WDj8jFt'); filter: blur(8px);"></div>
+<div class="fixed inset-0 z-0 bg-primary/40 dark:bg-black/70 pointer-events-none"></div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex flex-col items-center justify-center min-h-screen w-full p-4 md:p-8">
+<!-- Modal Container -->
+<div class="flex flex-col md:flex-row w-full max-w-5xl bg-background-light dark:bg-neutral-dark rounded-xl shadow-2xl overflow-hidden h-[85vh] md:h-[700px] animate-fade-in-up transition-all duration-300">
+<!-- Left Panel: Sidebar / Progress -->
+<div class="w-full md:w-1/3 bg-[#f2efe9] dark:bg-[#202020] border-r border-neutral-200 dark:border-neutral-700 flex flex-col">
+<!-- Header Logo Area -->
+<div class="p-8 pb-4">
+<h2 class="text-xl font-bold tracking-widest uppercase text-primary dark:text-white">THE BARBAR</h2>
+<p class="text-xs text-primary/60 dark:text-neutral-400 mt-1 uppercase tracking-wide">Premium Grooming</p>
+</div>
+<!-- Stepper Navigation -->
+<div class="flex-1 px-8 py-6 space-y-1">
+<!-- Step 1: Active -->
+<div class="group flex items-start gap-4 p-3 -mx-3 rounded-lg bg-white dark:bg-neutral-700 shadow-sm border border-neutral-200 dark:border-neutral-600 transition-all">
+<div class="mt-0.5 text-primary dark:text-white">
+<span class="material-symbols-outlined text-[20px]">content_cut</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold tracking-wider uppercase text-primary dark:text-white">01. Service</span>
+<span class="text-sm font-medium mt-1 text-primary/80 dark:text-gray-300">Select Service</span>
+</div>
+</div>
+<!-- Step 2: Inactive -->
+<div class="group flex items-start gap-4 p-3 -mx-3 rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800 transition-colors opacity-50">
+<div class="mt-0.5 text-primary dark:text-white">
+<span class="material-symbols-outlined text-[20px]">face</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold tracking-wider uppercase text-primary dark:text-white">02. Barber</span>
+<span class="text-sm font-medium mt-1 text-primary/80 dark:text-gray-300">Choose Professional</span>
+</div>
+</div>
+<!-- Step 3: Inactive -->
+<div class="group flex items-start gap-4 p-3 -mx-3 rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800 transition-colors opacity-50">
+<div class="mt-0.5 text-primary dark:text-white">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold tracking-wider uppercase text-primary dark:text-white">03. Time</span>
+<span class="text-sm font-medium mt-1 text-primary/80 dark:text-gray-300">Date &amp; Slot</span>
+</div>
+</div>
+<!-- Step 4: Inactive -->
+<div class="group flex items-start gap-4 p-3 -mx-3 rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800 transition-colors opacity-50">
+<div class="mt-0.5 text-primary dark:text-white">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold tracking-wider uppercase text-primary dark:text-white">04. Contact</span>
+<span class="text-sm font-medium mt-1 text-primary/80 dark:text-gray-300">Your Details</span>
+</div>
+</div>
+</div>
+<!-- Footer Summary (Sticky at bottom of sidebar) -->
+<div class="p-8 border-t border-neutral-200 dark:border-neutral-700 bg-[#ece9e3] dark:bg-[#1a1a1a]">
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-primary/60 dark:text-neutral-400">Total</span>
+<span class="text-xl font-bold text-primary dark:text-white">$0.00</span>
+</div>
+<div class="w-full bg-neutral-300 dark:bg-neutral-600 h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary dark:bg-white h-full w-[25%] rounded-full"></div>
+</div>
+<p class="text-[10px] text-center mt-3 text-primary/50 dark:text-neutral-500 uppercase tracking-widest">Step 1 of 4</p>
+</div>
+</div>
+<!-- Right Panel: Content Area -->
+<div class="w-full md:w-2/3 bg-background-light dark:bg-neutral-dark flex flex-col overflow-hidden relative">
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 md:p-12">
+<!-- Content Header -->
+<div class="flex justify-between items-center mb-8">
+<div>
+<h1 class="text-3xl font-bold text-primary dark:text-white tracking-tight">Select Service</h1>
+<p class="text-primary/60 dark:text-neutral-400 mt-2">Choose from our premium grooming services.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl text-neutral-300 dark:text-neutral-700">content_cut</span>
+</div>
+</div>
+<!-- Service Selection Grid -->
+<div class="space-y-4">
+<!-- Service Option 1 -->
+<label class="group relative flex items-center justify-between p-5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-primary dark:hover:border-white transition-all cursor-pointer shadow-sm hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="relative flex items-center justify-center mt-1">
+<input checked="" class="peer h-5 w-5 appearance-none rounded-full border border-neutral-300 checked:border-primary checked:bg-primary focus:ring-0 focus:ring-offset-0 dark:checked:bg-white dark:checked:border-white" name="service" type="radio"/>
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center text-white dark:text-black opacity-0 peer-checked:opacity-100">
+<svg class="h-3 w-3" fill="currentColor" viewbox="0 0 16 16">
+<circle cx="8" cy="8" r="3"></circle>
+</svg>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-primary dark:text-white group-hover:text-primary dark:group-hover:text-white transition-colors">Signature Cut</h3>
+<p class="text-sm text-primary/60 dark:text-neutral-400 mt-1">Precision cut, hot towel finish, and styling.</p>
+<div class="flex items-center gap-4 mt-3">
+<span class="flex items-center gap-1 text-xs font-medium text-primary/50 dark:text-neutral-500 uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 45 min
+                                        </span>
+</div>
+</div>
+</div>
+<div class="text-right pl-4 border-l border-neutral-100 dark:border-neutral-700">
+<span class="block text-xl font-bold text-primary dark:text-white">$50</span>
+</div>
+</label>
+<!-- Service Option 2 -->
+<label class="group relative flex items-center justify-between p-5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-primary dark:hover:border-white transition-all cursor-pointer shadow-sm hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer h-5 w-5 appearance-none rounded-full border border-neutral-300 checked:border-primary checked:bg-primary focus:ring-0 focus:ring-offset-0 dark:checked:bg-white dark:checked:border-white" name="service" type="radio"/>
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center text-white dark:text-black opacity-0 peer-checked:opacity-100">
+<svg class="h-3 w-3" fill="currentColor" viewbox="0 0 16 16">
+<circle cx="8" cy="8" r="3"></circle>
+</svg>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-primary dark:text-white group-hover:text-primary dark:group-hover:text-white transition-colors">Beard Sculpt</h3>
+<p class="text-sm text-primary/60 dark:text-neutral-400 mt-1">Razor line up, trimming, and deep conditioning.</p>
+<div class="flex items-center gap-4 mt-3">
+<span class="flex items-center gap-1 text-xs font-medium text-primary/50 dark:text-neutral-500 uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 30 min
+                                        </span>
+</div>
+</div>
+</div>
+<div class="text-right pl-4 border-l border-neutral-100 dark:border-neutral-700">
+<span class="block text-xl font-bold text-primary dark:text-white">$35</span>
+</div>
+</label>
+<!-- Service Option 3 -->
+<label class="group relative flex items-center justify-between p-5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-primary dark:hover:border-white transition-all cursor-pointer shadow-sm hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer h-5 w-5 appearance-none rounded-full border border-neutral-300 checked:border-primary checked:bg-primary focus:ring-0 focus:ring-offset-0 dark:checked:bg-white dark:checked:border-white" name="service" type="radio"/>
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center text-white dark:text-black opacity-0 peer-checked:opacity-100">
+<svg class="h-3 w-3" fill="currentColor" viewbox="0 0 16 16">
+<circle cx="8" cy="8" r="3"></circle>
+</svg>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-primary dark:text-white group-hover:text-primary dark:group-hover:text-white transition-colors">The Full Service</h3>
+<p class="text-sm text-primary/60 dark:text-neutral-400 mt-1">Complete package: Haircut + Beard Sculpt + Facial.</p>
+<div class="flex items-center gap-4 mt-3">
+<span class="flex items-center gap-1 text-xs font-medium text-primary/50 dark:text-neutral-500 uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 75 min
+                                        </span>
+</div>
+</div>
+</div>
+<div class="text-right pl-4 border-l border-neutral-100 dark:border-neutral-700">
+<span class="block text-xl font-bold text-primary dark:text-white">$80</span>
+</div>
+</label>
+<!-- Service Option 4 -->
+<label class="group relative flex items-center justify-between p-5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-primary dark:hover:border-white transition-all cursor-pointer shadow-sm hover:shadow-md opacity-70 hover:opacity-100">
+<div class="flex items-start gap-4">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer h-5 w-5 appearance-none rounded-full border border-neutral-300 checked:border-primary checked:bg-primary focus:ring-0 focus:ring-offset-0 dark:checked:bg-white dark:checked:border-white" name="service" type="radio"/>
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center text-white dark:text-black opacity-0 peer-checked:opacity-100">
+<svg class="h-3 w-3" fill="currentColor" viewbox="0 0 16 16">
+<circle cx="8" cy="8" r="3"></circle>
+</svg>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-primary dark:text-white group-hover:text-primary dark:group-hover:text-white transition-colors">Kid's Cut</h3>
+<p class="text-sm text-primary/60 dark:text-neutral-400 mt-1">For gentlemen under 12 years old.</p>
+<div class="flex items-center gap-4 mt-3">
+<span class="flex items-center gap-1 text-xs font-medium text-primary/50 dark:text-neutral-500 uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 30 min
+                                        </span>
+</div>
+</div>
+</div>
+<div class="text-right pl-4 border-l border-neutral-100 dark:border-neutral-700">
+<span class="block text-xl font-bold text-primary dark:text-white">$30</span>
+</div>
+</label>
+</div>
+<!-- Additional Info / Upsell -->
+<div class="mt-8 p-4 bg-neutral-100 dark:bg-neutral-800/50 rounded-lg border border-dashed border-neutral-300 dark:border-neutral-600">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/70 dark:text-neutral-300">info</span>
+<p class="text-sm text-primary/70 dark:text-neutral-300">All services include a complimentary beverage and consultation.</p>
+</div>
+</div>
+<div class="h-8"></div> <!-- Spacer for scroll -->
+</div>
+<!-- Sticky Action Footer -->
+<div class="p-6 border-t border-neutral-200 dark:border-neutral-700 bg-background-light dark:bg-neutral-dark flex justify-between items-center z-10">
+<button class="text-sm font-medium text-primary/60 hover:text-primary dark:text-neutral-400 dark:hover:text-white transition-colors uppercase tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back
+                    </button>
+<button class="bg-primary dark:bg-white text-background-light dark:text-primary px-8 py-3 rounded-md font-bold text-sm tracking-wider uppercase hover:shadow-lg hover:translate-y-[-1px] transition-all flex items-center gap-2">
+                        Continue
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Close Modal Button (Outside) -->
+<button class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+</body></html>

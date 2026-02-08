@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Modal - Date &amp; Time</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "cream": "#F9F7F2",
+                        "charcoal": "#1c1c1e",
+                        "charcoal-light": "#4a4a4a",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #d1d5db;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display flex items-center justify-center p-4">
+<div class="relative w-full max-w-5xl bg-cream dark:bg-zinc-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row h-[800px] max-h-[90vh]">
+<div class="w-full md:w-[320px] bg-cream dark:bg-zinc-800/50 border-r border-stone-200 dark:border-zinc-700 p-8 flex flex-col justify-between shrink-0">
+<div>
+<div class="mb-10">
+<h2 class="text-charcoal dark:text-white text-3xl font-medium italic mb-2">The Barbar</h2>
+<p class="text-charcoal-light dark:text-zinc-400 text-sm tracking-wide uppercase">Booking Appointment</p>
+</div>
+<div class="relative flex flex-col gap-8">
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="w-px h-full bg-primary my-2"></div>
+</div>
+<div class="pb-6">
+<p class="text-charcoal dark:text-zinc-300 text-sm uppercase tracking-wider font-semibold mb-1">Service</p>
+<p class="text-charcoal dark:text-white text-lg font-medium leading-tight">Signature Cut</p>
+<p class="text-charcoal-light dark:text-zinc-400 text-sm mt-1">$45.00 • 45 min</p>
+<button class="text-primary text-sm underline mt-1 hover:text-primary/80 transition-colors">Edit</button>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="w-px h-full bg-primary my-2"></div>
+</div>
+<div class="pb-6">
+<p class="text-charcoal dark:text-zinc-300 text-sm uppercase tracking-wider font-semibold mb-1">Barber</p>
+<div class="flex items-center gap-3 mt-1">
+<img class="w-10 h-10 rounded-full object-cover border border-stone-200" data-alt="Portrait of barber Elias V." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2T5ev-JVfmiauhWgyFviBnqaZyZ7SxF40tZLOX-NvTF5aHYFxws5WoAlaE2J8oV7bkNID1IuXUGY1jne2SELQhNsC_0RiyLOB-tgzyOBYEaY8MhBAYmsPFvSCKytVK5XLeUZEO1mb9E-692xE4ZKV7JU5EM01a-LOwHLMrS00s66zIr-zKAwn8IK3gNQD0QefNaOvPIHD9RCnhBQTTbMaME1mJ3DWBTwxYjyGduSLFQX9wb2o7rGLW7w0alTdb8Z6DEcr3vikWrAC"/>
+<div>
+<p class="text-charcoal dark:text-white text-lg font-medium leading-tight">Elias V.</p>
+<p class="text-charcoal-light dark:text-zinc-400 text-sm">Top Stylist</p>
+</div>
+</div>
+<button class="text-primary text-sm underline mt-2 hover:text-primary/80 transition-colors">Edit</button>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-charcoal dark:bg-white text-white dark:text-charcoal flex items-center justify-center shrink-0 shadow-lg ring-4 ring-cream dark:ring-zinc-900">
+<span class="font-bold">3</span>
+</div>
+<div class="w-px h-full bg-stone-300 dark:bg-zinc-700 my-2 border-l border-dashed border-stone-300"></div>
+</div>
+<div>
+<p class="text-charcoal dark:text-white text-sm uppercase tracking-wider font-bold mb-1">Date &amp; Time</p>
+<p class="text-charcoal-light dark:text-zinc-400 text-sm italic">Select a slot</p>
+</div>
+</div>
+<div class="flex gap-4 opacity-50">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full border-2 border-stone-300 dark:border-zinc-600 text-stone-400 flex items-center justify-center shrink-0">
+<span class="font-bold">4</span>
+</div>
+</div>
+<div>
+<p class="text-stone-500 dark:text-zinc-500 text-sm uppercase tracking-wider font-medium mb-1">Review</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-stone-200 dark:border-zinc-700">
+<div class="flex justify-between items-center text-sm">
+<span class="text-charcoal-light dark:text-zinc-400">Total</span>
+<span class="text-charcoal dark:text-white font-bold text-xl">$45.00</span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col bg-cream dark:bg-zinc-900 relative overflow-y-auto custom-scrollbar">
+<div class="p-8 pb-4">
+<h1 class="text-4xl md:text-5xl font-display font-medium text-charcoal dark:text-white italic tracking-tight">Select Date &amp; Time</h1>
+<p class="text-charcoal-light dark:text-zinc-400 mt-2 text-lg">Choose a convenient time for your appointment.</p>
+</div>
+<div class="px-8 py-4">
+<div class="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-sm border border-stone-100 dark:border-zinc-700">
+<div class="flex items-center justify-between mb-6">
+<button class="p-2 hover:bg-stone-100 dark:hover:bg-zinc-700 rounded-full transition-colors text-charcoal dark:text-white">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<h3 class="text-xl font-bold text-charcoal dark:text-white flex items-center gap-2">
+                            October 2023 
+                            <span class="material-symbols-outlined text-stone-400 text-sm">arrow_drop_down</span>
+</h3>
+<button class="p-2 hover:bg-stone-100 dark:hover:bg-zinc-700 rounded-full transition-colors text-charcoal dark:text-white">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-y-2 text-center mb-2">
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">Su</div>
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">Mo</div>
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">Tu</div>
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">We</div>
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">Th</div>
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">Fr</div>
+<div class="text-xs font-bold text-stone-400 uppercase tracking-widest py-2">Sa</div>
+</div>
+<div class="grid grid-cols-7 gap-y-2 gap-x-1 text-center">
+<div class="p-2"></div><div class="p-2"></div><div class="p-2"></div>
+<button class="aspect-square flex items-center justify-center rounded-full text-stone-400 cursor-not-allowed text-sm">1</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-stone-400 cursor-not-allowed text-sm">2</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-stone-400 cursor-not-allowed text-sm">3</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-stone-400 cursor-not-allowed text-sm">4</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">5</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">6</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">7</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">8</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">9</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">10</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">11</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">12</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">13</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">14</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">15</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">16</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">17</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">18</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">19</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">20</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">21</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">22</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">23</button>
+<button class="aspect-square flex items-center justify-center rounded-full bg-primary text-white shadow-md shadow-primary/30 text-sm font-bold">24</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">25</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">26</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">27</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">28</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">29</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">30</button>
+<button class="aspect-square flex items-center justify-center rounded-full text-charcoal dark:text-white hover:bg-stone-100 dark:hover:bg-zinc-700 text-sm font-medium">31</button>
+</div>
+</div>
+</div>
+<div class="px-8 pb-32">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-charcoal dark:text-white uppercase tracking-wider">Available Slots</h3>
+<span class="text-sm text-charcoal-light dark:text-zinc-400">Tuesday, Oct 24</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">10:00 AM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">10:30 AM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border-2 border-primary bg-primary text-white shadow-lg shadow-primary/20 transition-all transform scale-[1.02]">
+<span class="text-base font-bold">11:30 AM</span>
+<div class="absolute -top-2 -right-2 bg-charcoal text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Selected</div>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">12:00 PM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-stone-100 dark:bg-zinc-900 opacity-50 cursor-not-allowed">
+<span class="text-base font-medium text-stone-400 dark:text-zinc-600 line-through">1:00 PM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">1:30 PM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">2:00 PM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">2:30 PM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">3:30 PM</span>
+</button>
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="text-base font-medium text-charcoal dark:text-white">4:00 PM</span>
+</button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full bg-cream/90 dark:bg-zinc-900/90 backdrop-blur-md border-t border-stone-200 dark:border-zinc-700 p-6 flex justify-between items-center z-10">
+<button class="flex items-center gap-2 text-charcoal dark:text-white font-medium hover:text-primary transition-colors group px-2 py-1">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back
+                </button>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium tracking-wide shadow-lg shadow-primary/25 transition-all hover:shadow-primary/40 flex items-center gap-2">
+                    Review Appointment
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

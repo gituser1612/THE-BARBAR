@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE BARBAR - Precision Grooming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b7860b", 
+                        "cream-bg": "#F9F7F2", // New creamy background
+                        "charcoal-text": "#2D2D2D", // Soft charcoal for text
+                        "slate-muted": "#5A5A5A", // Softer grey for muted text
+                        "background-dark": "#1a1a1a", // Keeping for specific dark sections if needed
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D1Cdc0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b7860b;
+        }
+        .moody-img {
+            filter: sepia(20%) contrast(105%); 
+            transition: filter 0.5s ease;
+        }
+        .moody-img:hover {
+            filter: sepia(0%) contrast(100%);
+        }
+    </style>
+</head>
+<body class="bg-cream-bg text-charcoal-text font-display overflow-x-hidden transition-colors duration-300 selection:bg-primary selection:text-white">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream-bg/95 backdrop-blur-sm border-b border-[#e5e0d6]">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-primary">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 2v11h3v9l7-12h-4l4-8z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black tracking-widest text-charcoal-text uppercase">THE BARBAR</h2>
+</div>
+<div class="flex items-center gap-12">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold tracking-widest text-slate-muted hover:text-primary transition-colors uppercase" href="#services">Services</a>
+<a class="text-sm font-semibold tracking-widest text-slate-muted hover:text-primary transition-colors uppercase" href="#space">Our Space</a>
+</nav>
+<button class="bg-charcoal-text hover:bg-[#1a1a1a] text-[#F9F7F2] text-xs font-bold tracking-widest px-6 py-3 rounded uppercase transition-colors border border-transparent hover:border-primary/50 hidden sm:block">
+                    Book Appointment
+                </button>
+<button class="md:hidden text-charcoal-text">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<section class="min-h-[calc(100vh-80px)] w-full flex flex-col lg:flex-row relative">
+<div class="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-20 xl:p-32 bg-cream-bg z-10">
+<div class="flex flex-col gap-8 max-w-lg animate-fade-in-up">
+<div class="w-12 h-1 bg-primary mb-4"></div>
+<h1 class="text-5xl md:text-6xl xl:text-7xl font-black leading-[0.9] tracking-tighter text-charcoal-text uppercase">
+                        Precision<br/>Grooming
+                    </h1>
+<p class="text-lg md:text-xl text-slate-muted font-light max-w-md leading-relaxed">
+                        Old world service for the modern man. Experience the art of traditional barbering in an atmosphere of industrial luxury.
+                    </p>
+<div class="pt-4">
+<button class="group relative overflow-hidden bg-primary text-white text-sm font-bold tracking-[0.15em] px-10 py-4 rounded uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(183,134,11,0.3)]">
+<span class="relative z-10 flex items-center gap-2">
+                                Book Now
+                                <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</span>
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 min-h-[50vh] lg:min-h-auto relative overflow-hidden bg-[#e5e0d6]">
+<div class="absolute inset-0 bg-cover bg-center moody-img" data-alt="Barber giving a precise haircut in a dimly lit shop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlDBbLhOi6XPysjjf8OXhVwcfbYEpOUh1Ue_2uApgepi4vX_JQFWJ29wqml3kYl5bhECaGetpGXmjrzt_3qAxiwy-BQ70yrSqPNdqEFlyr3SCTOGq3IKQjoAmxq--_lfWxc9GTX7QqIwA6Rr0b4l4EXPDRkr7DAVMgHS81tusXJ4TF3S1qFMicxoKM7scv6dzAWkHO6P6J3ZWPOCwWtsm4bHemJLkQXy16TkzswqZWFlnIGlyfQrOfndyj3og_3jxzQGavCYJDRukv');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent lg:hidden"></div>
+</div>
+</section>
+<section class="py-24 lg:py-32 px-6 lg:px-12 bg-white" id="services">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-2 block">Menu</span>
+<h2 class="text-4xl md:text-5xl font-black text-charcoal-text uppercase tracking-tight">Our Craft</h2>
+</div>
+<p class="text-slate-muted max-w-md text-right md:text-left hidden md:block">
+                        Meticulous attention to detail. Every cut, shave, and trim is executed with surgical precision.
+                    </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12">
+<div class="space-y-10">
+<div class="group">
+<div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-2 relative">
+<h3 class="text-lg font-bold text-charcoal-text uppercase tracking-wide group-hover:text-primary transition-colors">Signature Cut</h3>
+<div class="flex-grow mx-4 border-b border-dotted border-slate-300 relative top-[-4px]"></div>
+<span class="text-xl font-bold text-primary">$55</span>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+<p class="text-sm text-slate-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+                                Hot towel finish, straight razor line-up, styling consultation.
+                            </p>
+</div>
+<div class="group">
+<div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-2 relative">
+<h3 class="text-lg font-bold text-charcoal-text uppercase tracking-wide group-hover:text-primary transition-colors">Beard Sculpt</h3>
+<div class="flex-grow mx-4 border-b border-dotted border-slate-300 relative top-[-4px]"></div>
+<span class="text-xl font-bold text-primary">$35</span>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+<p class="text-sm text-slate-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+                                Razor edging, hot towel, beard oil treatment.
+                            </p>
+</div>
+<div class="group">
+<div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-2 relative">
+<h3 class="text-lg font-bold text-charcoal-text uppercase tracking-wide group-hover:text-primary transition-colors">Grey Blending</h3>
+<div class="flex-grow mx-4 border-b border-dotted border-slate-300 relative top-[-4px]"></div>
+<span class="text-xl font-bold text-primary">$45</span>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+<p class="text-sm text-slate-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+                                Natural looking camouflage for grey hair.
+                            </p>
+</div>
+</div>
+<div class="space-y-10">
+<div class="group">
+<div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-2 relative">
+<h3 class="text-lg font-bold text-charcoal-text uppercase tracking-wide group-hover:text-primary transition-colors">The Royal Shave</h3>
+<div class="flex-grow mx-4 border-b border-dotted border-slate-300 relative top-[-4px]"></div>
+<span class="text-xl font-bold text-primary">$45</span>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+<p class="text-sm text-slate-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+                                Pre-shave oil, hot towel wrap, face massage, aftershave balm.
+                            </p>
+</div>
+<div class="group">
+<div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-2 relative">
+<h3 class="text-lg font-bold text-charcoal-text uppercase tracking-wide group-hover:text-primary transition-colors">Head Shave</h3>
+<div class="flex-grow mx-4 border-b border-dotted border-slate-300 relative top-[-4px]"></div>
+<span class="text-xl font-bold text-primary">$40</span>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+<p class="text-sm text-slate-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+                                Hot towel, straight razor finish, scalp moisturizer.
+                            </p>
+</div>
+<div class="group">
+<div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-2 relative">
+<h3 class="text-lg font-bold text-charcoal-text uppercase tracking-wide group-hover:text-primary transition-colors">Father &amp; Son</h3>
+<div class="flex-grow mx-4 border-b border-dotted border-slate-300 relative top-[-4px]"></div>
+<span class="text-xl font-bold text-primary">$90</span>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+<p class="text-sm text-slate-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+                                Combined signature cuts for the next generation.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 lg:py-32 bg-cream-bg relative" id="space">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col items-center mb-16 text-center">
+<span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-2 block">Atmosphere</span>
+<h2 class="text-4xl md:text-5xl font-black text-charcoal-text uppercase tracking-tight mb-6">The Space</h2>
+<p class="text-slate-muted max-w-2xl font-light text-lg">
+                        Designed for comfort. Built for conversation. A sanctuary where time slows down.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-7 h-[400px] md:h-full relative overflow-hidden rounded-lg group">
+<div class="absolute inset-0 bg-cover bg-center moody-img transition-transform duration-700 group-hover:scale-105" data-alt="Interior of a luxury barbershop with leather chairs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDosO5slJnCciFQRZrCJbV6pKGwp8EngdDux0AowKQJFOZIKEHlQpUZDA7H2ncQ32nf5Too3muZKy94c9YDCm_xog4qvATG511kZ7a5V-wZZ4i_618dmNyquZpnHmyhIihGK5LLGf4I3jrbDEY1BF23EFWWinwb31fRPlk6JovjGV3Ux85g_gbFmtdACfeooBHr9K3O327JkaUIK1YDtfEr0e4Gg0ai4CpFxCjU6njq83q1RZzlpLUhgg5uaf__ZZqmIZ8cJ2Et5Kt');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<span class="text-white font-bold tracking-widest uppercase text-sm">Main Floor</span>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-6 h-full">
+<div class="flex-1 relative overflow-hidden rounded-lg group h-[300px] md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center moody-img transition-transform duration-700 group-hover:scale-105" data-alt="Close up of barber tools and products on a shelf" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJxRpQybB6YpZEEaPFnZELO59oL7atKH_vryhoKt2XgHVXEGQr-aG00oXGgIUVr9xnFN3N9TmVDRo9kpE9-IYhBjVCPPcjaVl8SP7A6b5tGOhbpK0-gIV_j_Wy-pfZ1jyOuQ4-Wzf7-6fzOxH3DjozHiG-tXRkdm80Mh-p4sfMN0MiqAHLRoDdwDSoyTLSkmsvaxScXJ0rV3jR6TX5BWSLFuHboYbFPELQPaO76muS93XqovaZAixNf43rePw-1tRxtdQ0FDV4j1H-');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<span class="text-white font-bold tracking-widest uppercase text-sm">Tools of Trade</span>
+</div>
+</div>
+<div class="flex-1 relative overflow-hidden rounded-lg group h-[300px] md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center moody-img transition-transform duration-700 group-hover:scale-105" data-alt="Vintage barber chair in a moody setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3Dnc0R1P2H_ZAym4R9BVJQFO4LCJ-EKuHtrrRzTK-hF0wbxg_5Qgf-uV5imQVWcsC_a_EVfmvQSbpTOzVPoJOVvnV-NVDlypMSvMHgrc2zJxB9jYPyxQeWKRsexFevsiJ78T2yLYuF-EMpRSqaTrrIA-j9qO5qhHfQXj4v_74Vp-3Ey3u-S1f3u89e3vWbbo_JTpVwApRlgpLDqSXZA5IUz5ouXAwZFgV1MhkLHjuSXp9Mh-798kufMGRJNKKK78R95eEYzDm48D7');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<span class="text-white font-bold tracking-widest uppercase text-sm">Vintage Comfort</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-8">Ready for your upgrade?</h2>
+<button class="bg-charcoal-text text-[#F9F7F2] hover:bg-[#F9F7F2] hover:text-charcoal-text border border-charcoal-text text-sm font-bold tracking-[0.15em] px-12 py-4 rounded uppercase transition-all duration-300 shadow-xl">
+                    Book Appointment
+                </button>
+</div>
+</section>
+</main>
+<footer class="bg-charcoal-text text-[#F9F7F2] py-16 border-t border-slate-700">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col items-center">
+<div class="mb-10 text-primary opacity-80">
+<svg fill="currentColor" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 2v11h3v9l7-12h-4l4-8z"></path>
+</svg>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center w-full max-w-4xl mb-12">
+<div class="flex flex-col gap-3">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Visit Us</h4>
+<p class="text-slate-300 font-light">123 Wakad<br/>Pune, Maharashtra 411057</p>
+<a class="text-xs text-[#F9F7F2] border-b border-[#F9F7F2]/30 hover:border-[#F9F7F2] pb-1 w-max mx-auto transition-all" href="#">Get Directions</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Hours</h4>
+<ul class="text-slate-300 font-light space-y-1">
+<li>Mon - Fri: 10am - 8pm</li>
+<li>Saturday: 9am - 6pm</li>
+<li>Sunday: Closed</li>
+</ul>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Contact</h4>
+<p class="text-slate-300 font-light">+91 98765 43210</p>
+<p class="text-slate-300 font-light">hello@thebarbar.com</p>
+<div class="flex justify-center gap-4 mt-2">
+<a class="w-8 h-8 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg fill="currentColor" height="16" viewBox="0 0 24 24" width="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-8 h-8 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg fill="currentColor" height="16" viewBox="0 0 24 24" width="16"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="text-slate-500 text-xs tracking-wider text-center">
+                © 2023 THE BARBAR. All rights reserved.
+            </div>
+</div></footer>
+
+</body></html>

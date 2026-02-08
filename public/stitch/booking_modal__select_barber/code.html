@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Barber - The Barbar</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2e2e2e",
+                        "secondary": "#5C5C5C",
+                        "accent": "#D4AF37", // A subtle gold/bronze for accents
+                        "background-light": "#F9F7F2", // Warm cream
+                        "background-dark": "#191919",
+                        "sidebar-light": "#EFEBE0",
+                        "card-selected-border": "#2D2D2D",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex items-center justify-center p-4">
+<!-- Modal Container -->
+<div class="w-full max-w-6xl h-[85vh] bg-white dark:bg-[#222] rounded-2xl shadow-2xl flex overflow-hidden border border-neutral-200 dark:border-neutral-800">
+<!-- Left Panel: Sidebar & Stepper -->
+<div class="w-80 bg-sidebar-light dark:bg-[#1e1e1e] flex flex-col justify-between p-8 border-r border-neutral-200 dark:border-neutral-700 hidden md:flex">
+<!-- Branding & Stepper -->
+<div>
+<div class="mb-10">
+<h1 class="text-primary dark:text-white text-2xl font-bold tracking-tight">THE BARBAR</h1>
+<p class="text-secondary dark:text-neutral-400 text-sm mt-1">EST. 2024</p>
+</div>
+<!-- Vertical Stepper -->
+<div class="flex flex-col gap-6 relative">
+<!-- Step 1: Service (Completed) -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-primary dark:bg-neutral-600 flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary dark:text-white font-medium text-sm">Service</span>
+<span class="text-secondary dark:text-neutral-400 text-xs">Signature Cut</span>
+</div>
+</div>
+<!-- Step 2: Barber (Active) -->
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0 ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary dark:text-white font-bold text-sm">Barber</span>
+<span class="text-secondary dark:text-neutral-400 text-xs">Select Professional</span>
+</div>
+</div>
+<!-- Step 3: Time (Pending) -->
+<div class="flex items-center gap-4 opacity-50">
+<div class="w-8 h-8 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center text-neutral-400 shrink-0">
+<span class="text-xs font-bold">3</span>
+</div>
+<span class="text-neutral-500 dark:text-neutral-400 font-medium text-sm">Time</span>
+</div>
+<!-- Step 4: Confirm (Pending) -->
+<div class="flex items-center gap-4 opacity-50">
+<div class="w-8 h-8 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center text-neutral-400 shrink-0">
+<span class="text-xs font-bold">4</span>
+</div>
+<span class="text-neutral-500 dark:text-neutral-400 font-medium text-sm">Confirm</span>
+</div>
+<!-- Vertical Line Connector -->
+<div class="absolute left-4 top-9 bottom-9 w-px bg-neutral-300 dark:bg-neutral-700 -z-10"></div>
+</div>
+</div>
+<!-- Service Summary Card -->
+<div class="bg-white dark:bg-neutral-800 p-4 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm">
+<p class="text-xs text-secondary dark:text-neutral-400 uppercase tracking-wider font-semibold mb-3">Current Selection</p>
+<div class="flex gap-3 items-center">
+<div class="w-12 h-12 rounded-lg bg-neutral-200 bg-cover bg-center" data-alt="Close up of hair cutting scissors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5a5QZgZIfFKuoBiTZBPZKVo_MD5cBdyGfpyB_xi0aGYkmTS3KI0Xt80rnS59XK6c1NZ8Md5rVruEhY6ElnypHw1IXleqE_Bjjm8NvSaxe_7kcL5m4m051JqClzJawf2YUTxKihuizlwh-L28WkHPf_oNdOhNWXXPB_bmJGiZXq0psGquA0IuY8wTg4gqSEgBC6keeri4BtfHd31iM_wcyB-GcpDWGf3gVRUMp7K8ZoXBqlsxFYUg7ycQcRG7mK58bkctEULbCd9nI');"></div>
+<div>
+<p class="text-primary dark:text-white font-bold text-sm">Signature Cut</p>
+<p class="text-secondary dark:text-neutral-400 text-xs">$55.00 • 45 min</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Main Content -->
+<div class="flex-1 flex flex-col bg-background-light dark:bg-background-dark overflow-hidden relative">
+<!-- Mobile Header (Visible only on small screens) -->
+<div class="md:hidden px-6 py-4 border-b border-neutral-200 dark:border-neutral-700 flex justify-between items-center bg-white dark:bg-neutral-900">
+<span class="font-bold text-primary dark:text-white">THE BARBAR</span>
+<span class="text-xs bg-primary text-white px-2 py-1 rounded-full">Step 2/4</span>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-6 py-8 md:px-12 md:py-10">
+<div class="max-w-4xl mx-auto">
+<!-- Header -->
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-primary dark:text-white mb-2">Select Professional</h2>
+<p class="text-secondary dark:text-neutral-400">Choose a specific barber or select 'Any Professional' for maximum availability.</p>
+</div>
+<!-- Barber Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-20">
+<!-- Option 1: Any Professional -->
+<div class="group relative bg-white dark:bg-neutral-800 rounded-xl p-5 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-600 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center gap-3">
+<div class="w-20 h-20 rounded-full bg-neutral-100 dark:bg-neutral-700 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-4xl text-neutral-400">groups</span>
+</div>
+<div>
+<h3 class="font-bold text-primary dark:text-white text-lg">Any Professional</h3>
+<p class="text-sm text-secondary dark:text-neutral-400">Max Availability</p>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-xs font-medium text-neutral-600 dark:text-neutral-300 mt-1">Earliest: Today 2pm</span>
+</div>
+<!-- Option 2: Elias V. (Selected) -->
+<div class="group relative bg-white dark:bg-neutral-800 rounded-xl p-5 border-2 border-primary dark:border-white shadow-lg transition-all cursor-pointer flex flex-col items-center text-center gap-3 transform scale-[1.02]">
+<!-- Selected Checkmark -->
+<div class="absolute top-3 right-3 w-6 h-6 bg-primary dark:bg-white rounded-full flex items-center justify-center text-white dark:text-black shadow-sm">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="w-20 h-20 rounded-full bg-neutral-200 bg-cover bg-center mb-1 ring-2 ring-offset-2 ring-primary dark:ring-white dark:ring-offset-neutral-800" data-alt="Portrait of a smiling man with a well-groomed beard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgwJqg8FW6oe4qRaY8B3eKebRp861FbGO3gAy1ZSJwEuLfnQeso_etPRGGhkqZh8REff9SJ9Xa2tbY_cXrp92j8KfUkZkSD6aSlHJ4scSCJ9dWS0hXS5XfSS2x7KAKWI6sRfUcs9yZezNXhjngAnKm64lTP_pGqob1x_fSdetjQ5RznZXterHDwlIM18b1_othyF6Le1H1um3UP2XsjYKPYWZS4bdXSbtPFp_8-BMgjF2URHluysg7GphYwVoElWhxSRu1FbcltWpK');"></div>
+<div>
+<h3 class="font-bold text-primary dark:text-white text-lg">Elias V.</h3>
+<p class="text-sm text-secondary dark:text-neutral-400">Master Stylist</p>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-background-light dark:bg-neutral-700 text-xs font-medium text-primary dark:text-white mt-1 border border-neutral-200 dark:border-neutral-600">Beard Specialist</span>
+</div>
+<!-- Option 3: Marcus K. -->
+<div class="group relative bg-white dark:bg-neutral-800 rounded-xl p-5 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-600 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center gap-3">
+<div class="w-20 h-20 rounded-full bg-neutral-200 bg-cover bg-center mb-1" data-alt="Portrait of a male barber looking professional" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPTUXsLAxW1Rc-7VnOFjD4aMccwnrXjesfpI3i2GtDkuK4yhkJS4tMfAqL-cdYhG4Z161r4RXSI8iKSgYTh8N519FwLtwgPf0vdvXn5Jb_8OxrW-8QGqCwcVm08EEWC553hMDmJXimKyXe0mIEkiM5uCLjkVSGb1TmFPVHFS1lM3ZkngCNPs6oQ1Ii0ag9TItMhEB5kIsfUIhlIo_cNr9aEGGBeoX3ga26WWk2IzwwNwSm0Vj5ublSL0oi3QaM-5MMi9dZ9JiNRVF4');"></div>
+<div>
+<h3 class="font-bold text-primary dark:text-white text-lg">Marcus K.</h3>
+<p class="text-sm text-secondary dark:text-neutral-400">Senior Stylist</p>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-xs font-medium text-neutral-600 dark:text-neutral-300 mt-1">Fade Expert</span>
+</div>
+<!-- Option 4: Sarah J. -->
+<div class="group relative bg-white dark:bg-neutral-800 rounded-xl p-5 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-600 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center gap-3">
+<div class="w-20 h-20 rounded-full bg-neutral-200 bg-cover bg-center mb-1" data-alt="Portrait of a female stylist smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDK1YFDI6bOXamdPKVUGR2lc-lnweJAO46x5RhBqarYZsWal9M-XdGQri54ezG8NS7eHSUopEH-iwolA6HZCqgVg9a4P_oOasjvyWKHN7nu-rOEL8Wt7JZr4fC9BmMeMxzc6BdD0bIkdxM2o28OrwXdhSepY0BWM33XiZWr9kuItzw_NwcXM_ql9Y_RXJa_EZ3ErSVecYydpBzuEe5WDMPfKgZt1VVO9OfktwYmXNZjVFiamcixfYqkKVUQNmP8MhYivzXScZ6rs2pQ');"></div>
+<div>
+<h3 class="font-bold text-primary dark:text-white text-lg">Sarah J.</h3>
+<p class="text-sm text-secondary dark:text-neutral-400">Stylist</p>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-xs font-medium text-neutral-600 dark:text-neutral-300 mt-1">Colorist</span>
+</div>
+<!-- Option 5: David L. -->
+<div class="group relative bg-white dark:bg-neutral-800 rounded-xl p-5 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-600 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center gap-3">
+<div class="w-20 h-20 rounded-full bg-neutral-200 bg-cover bg-center mb-1" data-alt="Portrait of a male barber with short hair" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUBeo-ml10rqrMgbToAD1ql6xMo1UBegK_Y7DCRjVytyCQuhmWlWeTDLn6QUARq_twiX0pvao28OipKm5bYIwWvkfku90m5FLF4Fn39nqoClhN_EL2r1xybql6gkTYsxmtLx0caoH54H7kdqWjhTFI82C21DQEts8BBaK03XO4ZAPsKUhidmSoqnHHCh1cdzFS6n9Rkj3TP-VuU5RoKeHXRu3D2zpzSiLLT5zgMTBDouzns3kjjyQQDXvaFn0C5XOqe-3Rc7OD4R4F');"></div>
+<div>
+<h3 class="font-bold text-primary dark:text-white text-lg">David L.</h3>
+<p class="text-sm text-secondary dark:text-neutral-400">Junior Barber</p>
+</div>
+<span class="inline-block px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-xs font-medium text-neutral-600 dark:text-neutral-300 mt-1">Classic Cuts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer -->
+<div class="absolute bottom-0 left-0 right-0 bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 p-4 md:px-12 md:py-6 flex justify-between items-center z-10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<a class="flex items-center gap-2 text-secondary hover:text-primary dark:text-neutral-400 dark:hover:text-white transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                    BACK
+                </a>
+<button class="bg-primary hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black px-8 py-3 rounded-lg font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-xl flex items-center gap-2">
+                    CONTINUE TO TIME
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
